@@ -8,10 +8,14 @@ A short Arch Linux installation guide with documentation to recreate my custom A
 4. In this setup process I also edited the .vmx file within the VMware folder to add `firmware="efi"` into the second line to enable UEFI
 5. After booting the environment, I verfied my network connection `ping archlinux.org`
 6. I then used `timedatectl status` and checked if the system clock lined up with my laptop's time
-7. `fdisk -l` was used to identify the disks, where I created two partitions for sda1 and sda2 as instructed in the slides.
-8. I used `cfdisk` and partitioned the disks are dictated by the slides. 
-9. I mounted sda1 to `mkfs.ext4 /dev/root_partition` because it is the EFI partition and I used `mkfs.fat -F 32 /dev/efi_system_partition` for the other partition
-10. sda1 was mounted to /mnt using `mount --mkdir /dev/efi_system_partition /mnt/boot`
+7. `fdisk -l` was used to identify the disks, where I used `cfdisk` and partitioned the disks where sda1 is allocated 1M and set to boot, sda2 is allocated 4G and its type is Linux swap, and sda3 is allocated the rest of the space.
+8. I formatted using `mkfs.ext4 /dev/sda3` because it is the EFI partition and I used `mkswap /dev/sda2` and `swapon -a` for the other partition. I also mounted sda3 using `mount /dev/sda3 /mnt`.
+> I originally ran into the issue of either the partition not having enough space or an error in formatting when attempting to follow the hints left on the slides. So I decided diverging from the slides and following a YouTube guide that used steps 8-10.
 
-### Arch Linux Installation
-
+## Arch Linux Installation & Configuration
+1. I installed the base, linux, and linux-firmware packages using `pacstrap -K /mnt base linux linux-firmwar`
+2. I generated an fstab file using `genfstab -U /mnt >> /mnt/etc/fstab`
+3. I changed root with `arch-chroot /mnt`, used `ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime` to set the local time to Central Standard Time, and `hwclock --systohc` to create /etc/adjtime
+4. The next few steps required nano so I installed it using `pacman --sync vim nano` where I created my localization files, console keyboard layout, and network configuration according to steps 3.3-3.5 on the Arch Linux Wiki.
+5. `mkinitcpio -P` was used to generate a new initramfs image
+6. A root password was set using `passwd`
