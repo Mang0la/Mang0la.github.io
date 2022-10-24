@@ -19,3 +19,5 @@ A short Arch Linux installation guide with documentation to recreate my custom A
 4. The next few steps required nano so I installed it using `pacman --sync vim nano` where I created my localization files, console keyboard layout, and network configuration according to steps 3.3-3.5 on the Arch Linux Wiki.
 5. `mkinitcpio -P` was used to generate a new initramfs image
 6. A root password was set using `passwd`
+7. Finally I installed the amd microcode due to my system's CPU using `pacman -S amd-unicode` which will be automatically detected with grub. I installed grub as my bootloader using `pacman -S grub`, `grub-install /dev/sda`, and `grub-mkconfig -o /boot/grub/grub.cfg`
+> When booting back in, I had the largest issues from my keyboard being in the wrong language to being unable to connect to the internet. I fixed the language issue by finding the Latin American keyboard layout and navigating into the keyboard configs and changed KEYMAP to US. 
