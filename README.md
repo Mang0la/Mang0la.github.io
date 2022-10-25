@@ -22,10 +22,10 @@ A short Arch Linux installation guide with documentation to recreate my custom A
 7. Finally I installed the amd microcode due to my system's CPU using `pacman -S amd-unicode` which will be automatically detected with grub. I installed grub as my bootloader using `pacman -S grub`, `grub-install /dev/sda`, and `grub-mkconfig -o /boot/grub/grub.cfg`.
 > When booting back in, I had the largest issues from my keyboard being in the wrong language to being unable to connect to the internet. I fixed the language issue by finding the Latin American keyboard layout and navigating into the keyboard configs and changed KEYMAP to US. I then fixed the network connection issue by searching online and finding a solution. I had to create a file `/etc/systemd/network/20-wired.network` which I inserted:
 
-`[Match]
+[Match]
 Name=*
 
 [Network]
-DHCP=yes`
+DHCP=yes
 
 > Then I ran the commands `systemctl start systemd-networkd` and `systemctl start systemd-resolved`. I quickled installed dhcpcd using `pacman -S dhcpcd` and had it enabled using `systemctl enable dhcpcd`.
