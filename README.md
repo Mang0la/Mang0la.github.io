@@ -29,3 +29,28 @@ Name=*
 DHCP=yes
 
 > Then I ran the commands `systemctl start systemd-networkd` and `systemctl start systemd-resolved`. I quickled installed dhcpcd using `pacman -S dhcpcd` and had it enabled using `systemctl enable dhcpcd`.
+
+- I switched from dhcpcd to Network Manager as my research online as it seemed better for configurations and wireless connections.
+- `sudo pacman -Syu`, `sudo pacman -S wpa_supplicant wireless_tools networkmanager`, `sudo pacman -S nm-connection-editor network-manager-applet` updates packages and apps to use Network Manager 
+- `sudo systemctl enable NetworkManager.service` & `sudo systemctl enable wpa_supplicant.service` to enable to service and `sudo systemctl disable dhcpcd.service` as it is incompatible with Network Manager.
+
+# ONCE LOGGED BACK IN PLEASE TAKE A SNAPSHOT TO SAVE PROGRESS
+
+## User Account
+1. `sudo useradd -m thomas` - Creates a user 'thomas' with a home dir
+2. `sudo passwd thomas` - changes the password for the newly created user
+3. The same above commands are done but for user `codi` instead with a password of GraceHopper1906
+4. `sudo passwd -e codi` - Sets password of user `codi` into an expired status
+5. `sudo groupadd sudo`, `sudo usermod -a -G sudo thomas`, and `sudo usermod -a -G sudo codi`, grants the users sudo permissions
+
+## Desktop Environment
+I chose KDE as a GUI-based desktop environment to make it easier to navigate through the VM. 
+1. 	`lspci | grep -e VGA` - checkes the latest graphics drivers
+2. 	`sudo pacman -Syyu` - updates system
+3. 	`pacman -S xorg` & `pacman -S xorg-server` - installs display server packages
+4. 	`sudo pacman -S nvidia nvidia-utils nvidia-settings` - installs nvidia drivers and settings since I have an nvidia graphics card
+5. 	`pacman -S plasma plasma-meta`, `pacman-S plasma-wayland-session kde-applications`, `sudo pacman -S plasma kdeplasma-addons` - installs KDE Plasma Desktop Environment and its addons
+6. 	`systemctl enable sddm.service` - enables the display manager needed 
+
+> I had to redo the entire process because I did not set up a snapshot nor did I setup users to log into for the desktop environment
+
