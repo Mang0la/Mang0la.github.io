@@ -61,4 +61,26 @@ I chose KDE as a GUI-based desktop environment to make it easier to navigate thr
 > I had to redo the entire process because I did not set up a snapshot nor did I setup users to log into for the desktop environment
 
 ## Add-ons
-1. 
+### Shell
+1. `sudo pacman -S zsh` - I installed zsh as my shell since it's similar to bash and I didn't like some of the differences fish had
+2. `chsh -s /usr/bin/zsh` - changes the default shell to zsh
+3. Went into settings and added a profile to make subsequent changes. I edited the font to Monospace 18p.
+4. `sudo pacman -S git` - The next few steps required that I install git first 
+5. `git clone https://github.com/powerline/fonts powerline-fonts` - I needed these fonts downloaded to customize the terminal to my liking
+6. `sudo pacman -S powerline powerline-fonts` - required installations
+7. `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)4"` - installs Oh My Zsh, a plugin manager for zsh
+8. `touch ~/.zshrc` & `nano ~/.zshrc` - touch is done to make sure the file exists
+9. Edited the theme to be philip inside the .zshrc
+10. `PS1="%{$fg[blue]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%(5~|%-1~/.../%3~|%4~) %{$reset_color%}%%"` - Changes the colors of "$" and "%"; along with several others
+
+
+
+### SSH
+1. `sudo pacman -S putty` - I installed PuTTY since it's the same program we use during lectures
+2.  I unfortunately don't know how to connect to the class gateway since I don't know the port or anything else besides the IP Address (129.244.245.111).
+
+### Aliasing
+1. `nano ~/.zshrc` - opening up the file to make edits and make aliasing permanent
+2. `alias restart='sudo shutdown -r'` - restarts the terminal
+3. `alias ping='ping -c 5'` - makes it so pings only does it five times so there's no need to cancel out of it
+4. `alias pac='sudo pacman -S'` - sudo pacman -S is typically required for most installations so I decided to shorten it.
