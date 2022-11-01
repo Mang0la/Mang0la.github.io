@@ -77,10 +77,14 @@ I chose KDE as a GUI-based desktop environment to make it easier to navigate thr
 
 ### SSH
 1. `sudo pacman -S putty` - I installed PuTTY since it's the same program we use during lectures
-2.  I unfortunately don't know how to connect to the class gateway since I don't know the port or anything else besides the IP Address (129.244.245.111).
+2. `ssh -p22 sysadmin@129.244.245.111` - This connects me to the class gateway and requires that I use the original password from the VPN instructions on Harvey
 
 ### Aliasing
 1. `nano ~/.zshrc` - opening up the file to make edits and make aliasing permanent
 2. `alias restart='sudo shutdown -r'` - restarts the terminal
 3. `alias ping='ping -c 5'` - makes it so pings only does it five times so there's no need to cancel out of it
 4. `alias pac='sudo pacman -S'` - sudo pacman -S is typically required for most installations so I decided to shorten it.
+
+### Final Touches
+1. I added a Firefox as a browser since people online recommended it for Linux. I searched it up using the default Konquerer browser installed and downloading from the Firefox website. I then extracted it from the folder and added it to the Start Menu.
+2. I edited the Display Settings by right-clicking and choosing 'Configure Display Settings' and selecting 1600x900 resolution.
