@@ -89,4 +89,5 @@ I chose KDE as a GUI-based desktop environment to make it easier to navigate thr
 ### Final Touches
 1. I added a Firefox as a browser since people online recommended it for Linux. I searched it up using the default Konquerer browser installed and downloading from the Firefox website. I then extracted it from the folder and added it to the Start Menu.
 2. I edited the Display Settings by right-clicking and choosing 'Configure Display Settings' and selecting 1600x900 resolution.
+![image](https://user-images.githubusercontent.com/56270888/199753682-3ee8909e-453e-45e5-bf9c-edf5a720ad28.png)
 
