@@ -78,6 +78,7 @@ I chose KDE as a GUI-based desktop environment to make it easier to navigate thr
 ### SSH
 1. `sudo pacman -S putty` - I installed PuTTY since it's the same program we use during lectures
 2. `ssh -p22 sysadmin@129.244.245.111` - This connects me to the class gateway and requires that I use the original password from the VPN instructions on Harvey
+![image](https://user-images.githubusercontent.com/56270888/199752831-ca4e08f9-fa1e-4fed-9644-9413087adce3.png)
 
 ### Aliasing
 1. `nano ~/.zshrc` - opening up the file to make edits and make aliasing permanent
@@ -88,3 +89,4 @@ I chose KDE as a GUI-based desktop environment to make it easier to navigate thr
 ### Final Touches
 1. I added a Firefox as a browser since people online recommended it for Linux. I searched it up using the default Konquerer browser installed and downloading from the Firefox website. I then extracted it from the folder and added it to the Start Menu.
 2. I edited the Display Settings by right-clicking and choosing 'Configure Display Settings' and selecting 1600x900 resolution.
+
