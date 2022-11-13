@@ -71,4 +71,8 @@ services:
 volumes:
   mysql: {}` - inside the file
 8. `docker compose up -d` - starts the containers for wordpress
-9. 
+9. `http://localhost:8000/` - I typed this into my browser URL and was met with the WordPress screen
+10. Create an account by inputting the relevant information that you're prompted
+11. ![image](https://user-images.githubusercontent.com/56270888/201551298-8395cf4a-b8c9-42a4-a8df-c0bfb676d41c.png)
+12. Now you're done!
+
