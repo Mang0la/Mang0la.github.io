@@ -37,10 +37,11 @@ https://docs.docker.com/desktop/install/windows-install/
 4. `cd wordpress` - moves to the neew directory
 5. `echo "something" > docker-compose.yml` - I echoed something to create a new file in the directory
 6. I then navigated to the directory using File Explorer and opened it with VScode (though you can use any other text editor)
-7. I pasted `version: "3" 
-# Defines which compose version to use
-services:
-  # Services line define which Docker images to run. In this case, it will be MySQL server and WordPress image.
+7. I pasted:
+`version: "3" `
+`# Defines which compose version to use
+services:`
+  `# Services line define which Docker images to run. In this case, it will be MySQL server and WordPress image.
   db:
     image: mysql:5.7
     # image: mysql:5.7 indicates the MySQL database container image from Docker Hub used in this installation.
@@ -49,8 +50,8 @@ services:
       MYSQL_ROOT_PASSWORD: MyR00tMySQLPa$$5w0rD
       MYSQL_DATABASE: MyWordPressDatabaseName
       MYSQL_USER: MyWordPressUser
-      MYSQL_PASSWORD: Pa$$5w0rD
-      # Previous four lines define the main variables needed for the MySQL container to work: database, database username, database user password, and the MySQL root password.
+      MYSQL_PASSWORD: Pa$$5w0rD`
+     ` # Previous four lines define the main variables needed for the MySQL container to work: database, database username, database user password, and the MySQL root password.
   wordpress:
     depends_on:
       - db
@@ -64,8 +65,8 @@ services:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: MyWordPressUser
       WORDPRESS_DB_PASSWORD: Pa$$5w0rD
-      WORDPRESS_DB_NAME: MyWordPressDatabaseName
-# Similar to MySQL image variables, the last four lines define the main variables needed for the WordPress container to work properly with the MySQL container.
+      WORDPRESS_DB_NAME: MyWordPressDatabaseName`
+`# Similar to MySQL image variables, the last four lines define the main variables needed for the WordPress container to work properly with the MySQL container.
     volumes:
       ["./:/var/www/html"]
 volumes:
