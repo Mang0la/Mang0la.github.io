@@ -3,6 +3,7 @@ A short installation guide with documentation for installing Docker and PiHole v
 
 ## Installing Docker
 https://docs.docker.com/engine/install/ubuntu/
+https://docs.docker.com/desktop/install/windows-install/
 1. I used the instructions linked above to install 'Docker Desktop Installer.exe'
 2. I accepted the default values for most things from the prompts
 3. `sudo apt-get remove docker docker-engine docker.io containerd runc` - to uninstall any older version of Docker existing on the system
