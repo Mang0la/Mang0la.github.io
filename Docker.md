@@ -39,32 +39,8 @@ https://docs.docker.com/desktop/install/windows-install/
 6. I then navigated to the directory using File Explorer and opened it with VScode (though you can use any other text editor)
 7. I pasted:
 
-version: '3.3'
-services:
-   db:
-     image: mysql:5.7
-     volumes:
-       - db_data:/var/lib/mysql
-     restart: always
-     environment:
-       MYSQL_ROOT_PASSWORD: somewordpress
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD: wordpress
-   wordpress:
-     depends_on:
-       - db
-     image: wordpress:latest
-     ports:
-       - "8000:80"
-     restart: always
-     environment:
-       WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: wordpress
-       WORDPRESS_DB_PASSWORD: wordpress
-       WORDPRESS_DB_NAME: wordpress
-volumes:
-    db_data: {}
+![image](https://user-images.githubusercontent.com/56270888/201554608-4b289eec-7176-4f98-9fb5-baa1ad7e3677.png)
+
   
   - inside the file
 8. `docker compose up -d` - starts the containers for wordpress
