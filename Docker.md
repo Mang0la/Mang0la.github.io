@@ -65,6 +65,8 @@ services:
        WORDPRESS_DB_NAME: wordpress
 volumes:
     db_data: {}
+    
+    
 `version: "3" 
 
 #\ Defines which compose version to use
