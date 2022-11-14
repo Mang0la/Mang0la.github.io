@@ -44,7 +44,7 @@ services:
   #\ Services line define which Docker images to run. In this case, it will be MySQL server and WordPress image.
   db:
     image: mysql:5.7
-    # image: mysql:5.7 indicates the MySQL database container image from Docker Hub used in this installation.
+    #\ image: mysql:5.7 indicates the MySQL database container image from Docker Hub used in this installation.
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: MyR00tMySQLPa$$5w0rD
@@ -57,10 +57,10 @@ services:
       - db
     image: wordpress:latest
     restart: always
-    # Restart line controls the restart mode, meaning if the container stops running for any reason, it will restart the process immediately.
+    #\ Restart line controls the restart mode, meaning if the container stops running for any reason, it will restart the process immediately.
     ports:
       - "8000:80"
-      # The previous line defines the port that the WordPress container will use. After successful installation, the full path will look like this: http://localhost:8000
+      #\ The previous line defines the port that the WordPress container will use. After successful installation, the full path will look like this: http://localhost:8000
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: MyWordPressUser
