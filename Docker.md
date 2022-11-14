@@ -39,9 +39,13 @@ https://docs.docker.com/desktop/install/windows-install/
 6. I then navigated to the directory using File Explorer and opened it with VScode (though you can use any other text editor)
 7. I pasted:
 
+[Docker-ComposeYML.txt](https://github.com/Mang0la/Mang0la.github.io/files/9998698/Docker-ComposeYML.txt)
+
 `version: "3" 
+
 #\ Defines which compose version to use
 services:
+
   #\ Services line define which Docker images to run. In this case, it will be MySQL server and WordPress image.
   db:
     image: mysql:5.7
@@ -53,6 +57,7 @@ services:
       MYSQL_USER: MyWordPressUser
       MYSQL_PASSWORD: Pa$$5w0rD
       #\ Previous four lines define the main variables needed for the MySQL container to work: database, database username, database user password, and the MySQL root password.
+
   wordpress:
     depends_on:
       - db
