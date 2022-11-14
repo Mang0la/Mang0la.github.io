@@ -38,6 +38,7 @@ https://docs.docker.com/desktop/install/windows-install/
 5. `echo "something" > docker-compose.yml` - I echoed something to create a new file in the directory
 6. I then navigated to the directory using File Explorer and opened it with VScode (though you can use any other text editor)
 7. I pasted:
+
 `version: "3" 
 #\ Defines which compose version to use
 services:
@@ -60,7 +61,7 @@ services:
     #\ Restart line controls the restart mode, meaning if the container stops running for any reason, it will restart the process immediately.
     ports:
       - "8000:80"
-      #\ The previous line defines the port that the WordPress container will use. After successful installation, the full path will look like this: http://localhost:8000
+      #\ The previous line defines the port that the WordPress container will use. After successful installation, the full path will look like this: \http://localhost:8000
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: MyWordPressUser
@@ -70,7 +71,9 @@ services:
     volumes:
       ["./:/var/www/html"]
 volumes:
-  mysql: {}` - inside the file
+  mysql: {}` 
+  
+  - inside the file
 8. `docker compose up -d` - starts the containers for wordpress
 9. `http://localhost:8000/` - I typed this into my browser URL and was met with the WordPress screen
 10. Create an account by inputting the relevant information that you're prompted
