@@ -27,7 +27,7 @@ https://thematrix.dev/setup-wireguard-vpn-server-with-docker/
 1. `mkdir -p ~/wireguard/
 mkdir -p ~/wireguard/config/
 nano ~/wireguard/docker-compose.yml` - ran these commands on the new server to setup the docker-compose
-2. `version: '3.8'
+version: '3.8'
 services:
   wireguard:
     container_name: wireguard
@@ -55,4 +55,14 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1` - paste this into the docker-compose.yml
+      - net.ipv4.conf.all.src_valid_mark=1
+   - paste this into the docker-compose.yml
+2. paste this into the file. But need to change things based on your information. 
+3. `TZ=Asia/Hong_Kong` - must be changed for your timezone, so US=America/Chicago for CST. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones you can find the information here
+4. `SERVERURL` - is the server IP address. You can find it on DigitalOcean's dashboard
+5. `PEERS` - the number of user-config-files to generate, or the names of user-config-files. If you enter PEERS=3, it will generate peer_1, peer_2 and peer_3. If you enter PEERS=pc1,pc2,phone1, it will generate peer_pc1, peer_pc2 and peer_phone1.
+6. Save and exit the file
+7. `cd ~/wireguard/
+docker-compose up -d` - starts up Wireguard
+
+## Testing the VPN connection
