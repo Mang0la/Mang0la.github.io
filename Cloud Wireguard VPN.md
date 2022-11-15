@@ -33,29 +33,29 @@ services:
     container_name: wireguard
     image: linuxserver/wireguard
     environment:
-      -\ PUID=1000
-      -\ PGID=1000
-      -\ TZ=Asia/Hong_Kong
-      -\ SERVERURL=1.2.3.4
-      -\ SERVERPORT=51820
-      -\ PEERS=pc1,pc2,phone1
-      -\ PEERDNS=auto
-      -\ INTERNAL_SUBNET=10.0.0.0
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Hong_Kong
+      - SERVERURL=1.2.3.4
+      - SERVERPORT=51820
+      - PEERS=pc1,pc2,phone1
+      - PEERDNS=auto
+      - INTERNAL_SUBNET=10.0.0.0
     ports:
-      -\ 51820:51820/udp
+      - 51820:51820/udp
     volumes:
-      -\ type: bind
+      - type: bind
         source: ./config/
         target: /config/
-      -\ type: bind
+      - type: bind
         source: /lib/modules
         target: /lib/modules
     restart: always
     cap_add:
-      -\ NET_ADMIN
-      -\ SYS_MODULE
+      - NET_ADMIN
+      - SYS_MODULE
     sysctls:
-      -\ net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv4.conf.all.src_valid_mark=1
    - paste this into the docker-compose.yml
 2. paste this into the file. But need to change things based on your information. 
 3. `TZ=Asia/Hong_Kong` - must be changed for your timezone, so US=America/Chicago for CST. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones you can find the information here
