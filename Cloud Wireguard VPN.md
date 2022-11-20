@@ -62,7 +62,8 @@ services:
 4. `SERVERURL` - is the server IP address. You can find it on DigitalOcean's dashboard
 5. `PEERS` - the number of user-config-files to generate, or the names of user-config-files. If you enter PEERS=3, it will generate peer_1, peer_2 and peer_3. If you enter PEERS=pc1,pc2,phone1, it will generate peer_pc1, peer_pc2 and peer_phone1.
 6. Save and exit the file
-7. `cd ~/wireguard/
-docker-compose up -d` - starts up Wireguard
+7. `cd ~/wireguard/`
+   `docker-compose up -d` - starts up Wireguard
+8. 
 
 ## Testing the VPN connection
