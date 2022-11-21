@@ -44,7 +44,7 @@ services:
     ports:
       - 51820:51820/udp
     volumes:
-      - type: bind
+      - ty
         source: ./config/
         target: /config/
       - type: bind
@@ -64,6 +64,18 @@ services:
 6. Save and exit the file
 7. `cd ~/wireguard/`
    `docker-compose up -d` - starts up Wireguard
-8. 
 
 ## Testing the VPN connection
+1. `docker-compose logs -f wireguard` - composes logs and has a QR code needed to scan 
+2. I downloaded Wireguard on my phone and laptop preemptively.
+3. I first went to ipleak.net to find my initial IP address. I  then opened Wireguard on my phone to scan the QR code.
+4. I went back to ipleak.net and took a snip of both instances to show the changes.
+5. ![image](https://user-images.githubusercontent.com/56270888/202992783-ff0792a3-f15b-4326-b31d-be40425813fd.png)
+![image](https://user-images.githubusercontent.com/56270888/202992808-dc501bb6-2ec0-4d29-aed2-5c697b13f0a8.png)
+> The before and after images of the VPN connection respectively
+6. `cd wireguard/config`, `ls`, `cd peer_pc1` - these steps show me the config files' locations
+7. Fromt there I did `cat peer_pc1` - to find the configuration for a PC and copied it into notepad to have it effectively on my hardware.
+8. I opened Wireguard on my PC and found the peer_pc1.conf file on my PC and added it as a tunnel. I then activated it and opened another instance of ipleak.net
+9. ![image](https://user-images.githubusercontent.com/56270888/202992663-1404d4ce-c499-4eac-baa8-c29bcbb33bca.png)
+> The image above shows the resulting changes.
+> Please do not forget to deactivate the account to prevent any unnecessary charges.
