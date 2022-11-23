@@ -79,3 +79,4 @@ services:
 9. ![image](https://user-images.githubusercontent.com/56270888/202992663-1404d4ce-c499-4eac-baa8-c29bcbb33bca.png)
 > The image above shows the resulting changes.
 > Please do not forget to deactivate the account to prevent any unnecessary charges.
+> When uninstalling and deactivating the DigitalOcean account be sure to deactivate your Wireguard connection as you will lose your connection to the internet by trying to connect to a non-existent VPN instance.
